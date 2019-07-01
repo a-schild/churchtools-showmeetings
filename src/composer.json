@@ -13,6 +13,7 @@
         }],
     "require": {
         "php": "^7.2",
-        "vineyardkoeln/churchtools-api": "dev-master" 
+        "vineyardkoeln/churchtools-api": "dev-master",
+        "phpoffice/phpspreadsheet": "^1.8.0"
     }
 }

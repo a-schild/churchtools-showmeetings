@@ -26,6 +26,12 @@ if ($serverURL == null)
     $password= $_SESSION["password"];
     $serverURL= $_SESSION["serverURL"];
 }
+else
+{
+    $_SESSION["userName"]= $userName;
+    $_SESSION["password"]= $password;
+    $_SESSION["serverURL"]= $serverURL;
+}
 
 $groupType= filter_input(INPUT_POST, "GROUPTYPE");
 
@@ -40,6 +46,7 @@ try
     $visibleGroupTypes= $personMasterData->getGroupTypes();
     $visibleGroups= $personMasterData->getGroups();
     $selectedGroups= $visibleGroups->getGroupsOfType($groupType);
+    $_SESSION["selectedGroups"]= $selectedGroups;
 }
 catch (Exception $e)
 {
@@ -128,11 +135,12 @@ catch (Exception $e)
                     </div>
                     <?php } ?>
                     <?php } } ?>
+            </form>
              <div class="form-group row mt-2 ml-1">
 <!--                 <input type="submit" value="Show meetings" class="btn btn-primary mr-1">-->
                  <a href="index.php" class="btn btn-secondary mr-1">Abmelden</a>
+                 <a href="export-xlsx.php" class="btn btn-secondary mr-1" target="_blank">Export als XLSX Datei</a>
              </div>
-            </form>
             <?php } ?>
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

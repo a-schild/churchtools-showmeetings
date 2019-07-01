@@ -22,7 +22,7 @@ $groupTypeID= $configs["groupTypeID"];
     </head>
     <body>
         <div class="container">
-        <h1>CT Calendarbuilder</h1>
+        <h1>CT Gruppentreffen</h1>
         <h2>Login mit Ihrem Churchtools Account</h2>
         <?php 
         $formUrl= "select-cal-grouptypes.php";
