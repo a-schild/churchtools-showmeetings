@@ -21,7 +21,6 @@ $password= filter_input(INPUT_POST, "password");
 session_start();
 if ($serverURL == null)
 {
-    echo "Server URL is null";
     $userName= $_SESSION["userName"];
     $password= $_SESSION["password"];
     $serverURL= $_SESSION["serverURL"];
@@ -34,6 +33,7 @@ else
 }
 
 $groupType= filter_input(INPUT_POST, "GROUPTYPE");
+$showLeader= filter_input(INPUT_POST, "SHOW_LEADER");
 
 $hasError= false;
 $errorMessage= null;
@@ -67,7 +67,7 @@ catch (Exception $e)
     </head>
     <body>
         <div class="container">
-            <h1>CT Gruppentreffen</h1>
+            <h1>Churchtools Gruppentreffen</h1>
             <?php if ($hasError) { ?>
             <h2>Login fehlgeschlagen</h2>
             <div class="alert alert-danger" role="alert">
@@ -77,7 +77,6 @@ catch (Exception $e)
                 <a href="index.php" class="btn btn-primary">Zum Login</a>
             </div>
             <?php } else { ?>
-            <h5>Gruppe</h5>
             <?php 
                     foreach( $selectedGroups as $group) { ?>
             <?php

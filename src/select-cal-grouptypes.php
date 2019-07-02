@@ -48,7 +48,7 @@ catch (Exception $e)
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Churchtools Calendarbuilder</title>
+        <title>Churchtools Gruppentreffen</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />        
         <link rel="stylesheet" href="styles.css">
@@ -85,7 +85,7 @@ catch (Exception $e)
     </head>
     <body>
         <div class="container">
-            <h1>CT Groupmeetings to Calendar</h1>
+            <h1>Churchtools Gruppentreffen</h1>
             <?php if ($hasError) { ?>
             <h2>Login fehlgeschlagen</h2>
             <div class="alert alert-danger" role="alert">
@@ -109,7 +109,7 @@ catch (Exception $e)
             <?php } ?>
                     </div>  -->
                     <div class="col-6 grouptypes">
-                        <h5>Group types</h5>
+                        <h5>Gruppentypen</h5>
             <?php $groupTypesIDS= $visibleGroupTypes->getGroupTypesIDS(true);
                     foreach( $groupTypesIDS as $groupTypeID) {
                         $groupType=$visibleGroupTypes->getGroupType($groupTypeID);
@@ -122,8 +122,14 @@ catch (Exception $e)
                             <?php } ?>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-6">
+                        <label class="form-check-label" for="SHOW_LEADER"><input type="checkbox" class="form-check-input" id="SHOW_LEADER" name="SHOW_LEADER" value="1">Gruppenleitung anzeigen</label>
+                        
+                    </div>
+                </div>
              <div class="form-group row mt-2 ml-1">
-                 <input type="submit" value="Show meetings" class="btn btn-primary mr-1">
+                 <input type="submit" value="Gruppentreffen anzeigen" class="btn btn-primary mr-1">
                  <a href="index.php" class="btn btn-secondary mr-1">Abmelden</a>
              </div>
             </form>

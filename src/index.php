@@ -55,6 +55,9 @@ $groupTypeID= $configs["groupTypeID"];
             <?php if ($groupTypeID != null) { ?>
             <input type="hidden" name="GROUPTYPE" value="<?= $groupTypeID ?>" >
             <?php } ?>
+            <?php if ($showLeader != null) { ?>
+            <input type="hidden" name="SHOW_LEADER" value="<?= $showLeader ?>" >
+            <?php } ?>
              </div>
         </form>
         </div>
